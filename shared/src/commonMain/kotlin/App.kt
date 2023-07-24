@@ -1,5 +1,6 @@
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -29,7 +30,11 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun App() {
     MaterialTheme {
-        HelloButton()
+//        HelloButton()
+        MessageCard(Message(
+            author = "sglee487",
+            body = "I am sg0"
+        ))
     }
 }
 
@@ -57,10 +62,6 @@ fun HelloButton() {
                 null
             )
         }
-        MessageCard(Message(
-            author = "sglee487",
-            body = "I am sg0"
-        ))
     }
 }
 
@@ -77,6 +78,7 @@ fun MessageCard(msg: Message) {
                 .size(40.dp)
                 // Clip image to be shaped as a circle
                 .clip(CircleShape)
+                .border(1.5.dp, MaterialTheme.colors.secondary, CircleShape)
         )
 
         // Add a horizontal space between the image and the column
